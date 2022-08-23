@@ -1,4 +1,4 @@
-# EF_Informatik
+## EF_Informatik
 
 Lia Brandenberger
 
