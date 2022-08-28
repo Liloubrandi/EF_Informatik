@@ -53,3 +53,13 @@ for i in range(20):
     right(2)
 #nicht richtiges Codebeispiel, nur Auschnitt aus dem Code mit meiner Lösung (anstatt mit den circle-Funktionsaufruf)
 ```
+
+Kann Python auch hochrechnen mit Hochzeichen (^) anstatt nur mit x \* x?
+
+```py
+left(135)
+    forward(sqrt(size * size + size * size))
+    left(90)
+    forward(sqrt(size * size + size * size)/2)
+#nur Ausschnitt aus Codeblock
+```
