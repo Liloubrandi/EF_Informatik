@@ -20,7 +20,7 @@ forward(30)
 right(90)
 ```
 
-Wenn man in einem If etwas mitem einem Gleichzeichen vergleichen will, muss man immer ein Doppelgleich (==) setzen.
+Wenn man in einem If etwas mitem einem Gleichzeichen vergleichen will, muss man immer ein Doppelgleich (==) setzen. Ein = wäre eine Zuweisung bei einer Variable.
 
 ```py
 if i == 3:
