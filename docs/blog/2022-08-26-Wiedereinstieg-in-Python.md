@@ -4,7 +4,8 @@
 
 ### Mein persönlicher Einstieg:
 
-Ich habe vorher noch nie mit der Bibliothek 'turtle' gearbeitet, deshalb kam mir (ausser viellicht die Struktur) fast nichts bekannt vor. Es war jedoch sehr selbsterklärend und deswegen konnte ich gut den Anschluss finden.
+Ich habe vorher noch nie mit der Bibliothek 'turtle' gearbeitet, deshalb kam mir (ausser viellicht die Struktur) fast nichts bekannt vor. Es war jedoch sehr selbsterklärend und deswegen konnte ich gut den Anschluss finden.  
+.
 
 ### Meine Fehler:
 
@@ -27,6 +28,9 @@ if i == 3:
 #Dies ist nur ein Ausschnitt aus Codeblock
 ```
 
+Ich habe erst nach dem dritten Mal lesen gemerkt, dass ich bei der Aufgabe mit der Stadt nicht 'pencolor(choice([1,3,5,7,9]))' schreiben muss, sondern die Farbnahmen auflisten muss haha:/  
+.
+
 ### Das war mir besonders neu:
 
 Das man sequenzieren kann mit 'for i in range(n)'
@@ -38,6 +42,8 @@ for i in range(4))
     left(90)
     forward(80)
 ```
+
+.
 
 ### Fragen, die aufgetaucht sind zu Übungen:
 
