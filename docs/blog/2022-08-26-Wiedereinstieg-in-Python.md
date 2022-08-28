@@ -30,3 +30,18 @@ for i in range(4))
     left(90)
     forward(80)
 ```
+
+### Fragen, die aufgetaucht sind zu Übungen:
+
+Kann man Kreise (circle(x,y)) nur nach links machen oder auch der andere Weg?
+
+```py
+blume()
+right(40)
+pencolor('black')
+pensize(2)
+for i in range(20):
+    forward(10)
+    right(2)
+#nicht richtiges Codebeispiel, nur Auschnitt aus dem Code mit meiner Lösung (anstatt mit den circle-Funktionsaufruf)
+```
