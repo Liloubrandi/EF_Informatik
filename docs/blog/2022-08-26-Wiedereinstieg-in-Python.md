@@ -19,6 +19,14 @@ forward(30)
 right(90)
 ```
 
+Wenn man in einem If etwas mitem einem Gleichzeichen vergleichen will, muss man immer ein Doppelgleich (==) setzen.
+
+```py
+if i == 3:
+    sechseck(100-10*i,'green')
+#Dies ist nur ein Ausschnitt aus Codeblock
+```
+
 ### Das war mir besonders neu:
 
 Das man sequenzieren kann mit 'for i in range(n)'
