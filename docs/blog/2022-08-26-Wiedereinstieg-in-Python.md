@@ -69,3 +69,5 @@ left(135)
     forward(sqrt(size * size + size * size)/2)
 #nur Ausschnitt aus Codeblock
 ```
+
+Wie mache ich beim Ratespiel die Möglichkeit das Ganze abzubrechen?
