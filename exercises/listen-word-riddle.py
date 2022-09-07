@@ -14,3 +14,16 @@ MESSAGE = [32, 5, 7, 15, 51, 23, 3, 13, 48, 2, 11, 29, 14, 6, 16, 1, 9, 0, 12, 4
 
 for number in MESSAGE:
     print(ALPHABET[MAPPING[number]], end='')
+
+primzahlen = []
+rechnen = [2, 3, 5, 7]
+for i in range(1, 100):
+    for x in range(4):
+        zahl = i % rechnen[x]
+        if zahl > 0:
+            primzahlen.append(i)
+            break
+        else:
+            break
+print(primzahlen)
+# kleines Problem: 1 ist keine Primzahl, da sie nur einen Teiler hat, 2 jedoch schon
