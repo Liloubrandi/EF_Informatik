@@ -27,3 +27,6 @@ for i in range(2, 100):
     if i % 2 != 0 and i % 3 != 0 and i % 5 != 0 and i % 7 != 0:
         primzahlen.append(i)
 print(primzahlen)
+
+# Nur maximal durch die Wurzel der Endzahl teilen int(wurzel von x)
+# Nur durch Primzahlen, weil sich alle anderen Teiler aus ihnen zusammenstellen
