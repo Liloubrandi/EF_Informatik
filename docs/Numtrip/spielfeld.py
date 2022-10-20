@@ -22,9 +22,14 @@ spielfeld = [
 ]
 
 for line in spielfeld:
-    print('+-----+-----+-----+-----+-----+')
-    print('|     |     |     |     |     |')
+    print('+-------+-------+-------+-------+-------+')
+    print('|       |       |       |       |       |')
     for field in line:
-        print(f'|  {field}  ', end='')
+        if field > 9:
+            print(f'|   {field}  ', end='')
+        elif field > 99:
+            print(f'|  {field}  ', end='')
+        else:
+            print(f'|   {field}   ', end='')
     print('|')
-    print('|     |     |     |     |     |')
+    print('|       |       |       |       |       |')
