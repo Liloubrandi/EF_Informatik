@@ -33,3 +33,4 @@ for line in spielfeld:
             print(f'|   {field}   ', end='')
     print('|')
     print('|       |       |       |       |       |')
+print('+-------+-------+-------+-------+-------+')
