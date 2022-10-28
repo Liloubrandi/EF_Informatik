@@ -1,5 +1,8 @@
+import zufallsworte as zufall
+# Im Terminal " pip3 install zufallsworte " eingeben.
+
 # Variablen
-gesucht = 'test'
+gesucht = zufall.zufallswoerter(1)[0]  # gibt ein Zufallswort zurück
 
 gefunden = []
 falsch_geraten = []
@@ -58,7 +61,7 @@ def play():
         inp = eingabe()
         auswerten(inp)
     if gewonnen():
-        print('gewonnen!:)')
+        print('gewonnen!:), das Wort war:' gesucht)
     else:
         print('verloren:(, gesucht wäre:', gesucht)
 
