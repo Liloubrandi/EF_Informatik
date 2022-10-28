@@ -3,7 +3,8 @@ import zufallsworte as zufall
 
 # Variablen
 gesucht = zufall.zufallswoerter(1)[0]  # gibt ein Zufallswort zurück
-# Problem bei Wörter mit grossen Anfangsbuchstaben
+# Problem bei Wörter mit grossen Anfangsbuchstaben. Lösung:
+gesucht = gesucht.lower()
 
 gefunden = []
 falsch_geraten = []
