@@ -16,8 +16,10 @@ def show():
     print('')
 
 
-def is_valid(inp):  # inp ist der Input
-    return True
+def is_valid(inp):  # inp ist der Input - ist er valide?
+    if len(inp) != 1:
+        return False
+    return inp.isalpha()
 
 
 def eingabe():
@@ -33,30 +35,32 @@ def auswerten(valid_inp):
     if valid_inp in gesucht:
         gefunden.append(valid_inp)
     else:
+        # Buchstabe wird entweder zu gefunden oder zu falsch_geraten hinzugefügt.
         falsch_geraten.append(valid_inp)
 
 
 def gewonnen():
-    for buchstabe in gesucht:
+    for buchstabe in gesucht:  # tester, ob man jeden Buchstaben hat.
         if buchstabe not in gefunden:
             return False
     return True
 
 
 def game_over():
-    pass
+    if len(falsch_geraten) > 10:
+        return True
+    return gewonnen()
 
 
 def play():
-    while not game_over:
-        buchstabe = eingabe()
-        auswerten(buchstabe)
-        print(buchstabe)
+    while not game_over():
         show()
+        inp = eingabe()
+        auswerten(inp)
     if gewonnen():
         print('gewonnen!:)')
     else:
-        print('verloren:(')
+        print('verloren:(, gesucht wäre:', gesucht)
 
 
 play()
