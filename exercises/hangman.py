@@ -3,6 +3,7 @@ import zufallsworte as zufall
 
 # Variablen
 gesucht = zufall.zufallswoerter(1)[0]  # gibt ein Zufallswort zurück
+# Problem bei Wörter mit grossen Anfangsbuchstaben
 
 gefunden = []
 falsch_geraten = []
@@ -61,7 +62,7 @@ def play():
         inp = eingabe()
         auswerten(inp)
     if gewonnen():
-        print('gewonnen!:), das Wort war:' gesucht)
+        print('gewonnen!:), das Wort war:', gesucht)
     else:
         print('verloren:(, gesucht wäre:', gesucht)
 
