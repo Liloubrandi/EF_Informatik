@@ -21,16 +21,38 @@ spielfeld = [
     [8, 8, 16, 2, 2],
 ]
 
-for line in spielfeld:
-    print('+-------+-------+-------+-------+-------+')
-    print('|       |       |       |       |       |')
-    for field in line:
-        if field > 9:
-            print(f'|   {field}  ', end='')
-        elif field > 99:
-            print(f'|  {field}  ', end='')
+
+def mache_spielfeld():
+    zeile = 1
+    for line in spielfeld:
+        print(zeile, end='')
+        # sollte es nur einmal am Anfang schreiben
+        print(' +-------+-------+-------+-------+-------+')
+        print('  |       |       |       |       |       |')
+        print('  ', end='')
+        for field in line:
+            if field > 9:
+                print(f'|   {field}  ', end='')
+            elif field > 99:
+                print(f'|  {field}  ', end='')
+            else:
+                print(f'|   {field}   ', end='')
+        print('|')
+        print('  |       |       |       |       |       |')
+        print('  +-------+-------+-------+-------+-------+')
+        zeile = zeile + 1
+
+
+def spaltennummer():
+    spalte = 1
+    for field in spielfeld[1]:
+        # sollte beim letzten Mal nur noch die Spalte schreiben.
+        if field == len(spielfeld[1]):
+            print(spalten)
         else:
-            print(f'|   {field}   ', end='')
-    print('|')
-    print('|       |       |       |       |       |')
-print('+-------+-------+-------+-------+-------+')
+            print(spalte, end='       ')
+            spalte = spalte + 1
+
+
+spaltennummer()
+mache_spielfeld()
