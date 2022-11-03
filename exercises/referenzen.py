@@ -32,7 +32,8 @@ b[0] = b[0] + 1
 print(a, id(a))
 print(b, id(b))
 print(b[0], id(b[0]))
-print(b[1], id(b[1]))  # woher plötzlich das b[1]?
+# woher plötzlich das b[1] -> die zweite Zahl in der Liste b = 2
+print(b[1], id(b[1]))
 
 # Jetzt werden die list-Objekte durch ein str-Objekt ersetzt. Weil beide Texte gleich sind, gibt es nur ein Objekt und
 # a und b sind mit diesem einen Objekt verbunden.
