@@ -1,18 +1,3 @@
-#import random
-
-#spielfeld = []
-
-# def pprint(feld):
-#    for zeile in spielfeld:
-#        print(zeile)
-
-# for i in range(5):
-#    spielfeld.append([])
-#    for j in range(5):
-#        spielfeld[i].append(2**random.randint(1, 4))
-
-# pprint(spielfeld)
-
 spielfeld = [
     [2, 4, 4, 8, 32],
     [2, 2, 8, 16, 16],
@@ -22,14 +7,16 @@ spielfeld = [
 ]
 
 
-def mache_spielfeld():
+def mache_spielfeld(zeilennr, spaltennr):
     zeile = 1
-    print('  +-------+-------+-------+-------+-------+')
-    for line in spielfeld:
+    print('  ')
+    print(spaltennr * '+-------')
+    for line in range(zeilennr):
         print(zeile, end='')
-        print(' |       |       |       |       |       |')
+        print(' ')
+        print(spaltennr * '|       ')
         print('  ', end='')
-        for field in line:
+        for field in range(spaltennr):
             if field > 9:
                 print(f'|   {field}  ', end='')
             elif field > 99:
@@ -37,8 +24,10 @@ def mache_spielfeld():
             else:
                 print(f'|   {field}   ', end='')
         print('|')
-        print('  |       |       |       |       |       |')
-        print('  +-------+-------+-------+-------+-------+')
+        print('  ')
+        print(spaltennr * '|       ')
+        print('  ')
+        print(spaltennr * '+-------')
         zeile = zeile + 1
 
 
