@@ -1,22 +1,23 @@
 spielfeld = [
-    [2, 4, 4, 8, 32],
-    [2, 2, 8, 16, 16],
-    [4, 8, 8, 2, 2],
-    [2, 4, 8, 16, 2],
-    [8, 8, 16, 2, 2],
+    [2, 4, 8, 8, 32, 2],
+    [2, 2, 8, 16, 16, 8],
+    [4, 8, 2, 2, 2, 16],
+    [2, 4, 8, 16, 2, 4],
+    [8, 8, 16, 2, 2, 2],
+    [8, 4, 2, 4, 16, 32]
 ]
 
 
-def mache_spielfeld(zeilennr, spaltennr):
+def mache_spielfeld():
     zeile = 1
-    print('  ')
-    print(spaltennr * '+-------')
-    for line in range(zeilennr):
+    print('  +', end='')
+    print(len(spielfeld[1]) * '-------+')
+    for line in spielfeld:
         print(zeile, end='')
-        print(' ')
-        print(spaltennr * '|       ')
+        print(' |', end='')
+        print(len(spielfeld[1]) * '       |')
         print('  ', end='')
-        for field in range(spaltennr):
+        for field in line:
             if field > 9:
                 print(f'|   {field}  ', end='')
             elif field > 99:
@@ -24,10 +25,10 @@ def mache_spielfeld(zeilennr, spaltennr):
             else:
                 print(f'|   {field}   ', end='')
         print('|')
-        print('  ')
-        print(spaltennr * '|       ')
-        print('  ')
-        print(spaltennr * '+-------')
+        print('  |', end='')
+        print(len(spielfeld[1]) * '       |')
+        print('  +', end='')
+        print(len(spielfeld[1]) * '-------+')
         zeile = zeile + 1
 
 
