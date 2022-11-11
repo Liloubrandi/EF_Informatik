@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Lern Blog Blog</title>
-        <link>https://foobar.github.io/repo/</link>
+        <link>https://Liloubrandi.github.io/EF_Informatik/</link>
         <description>Lern Blog Blog</description>
         <lastBuildDate>Fri, 26 Aug 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>de</language>
         <item>
             <title><![CDATA[Wiedereinstieg in Python]]></title>
-            <link>https://foobar.github.io/repo/2022/08/26/Wiedereinstieg-in-Python</link>
+            <link>https://Liloubrandi.github.io/EF_Informatik/2022/08/26/Wiedereinstieg-in-Python</link>
             <guid>/2022/08/26/Wiedereinstieg-in-Python</guid>
             <pubDate>Fri, 26 Aug 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[---]]></description>
