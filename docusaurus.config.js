@@ -61,7 +61,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'EF Blog',
+        title: 'EF Lia',
         logo: {
           alt: 'Page Logo',
           src: 'img/logo.svg',
