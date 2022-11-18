@@ -45,3 +45,12 @@ def spaltennummer():
 
 spaltennummer()
 mache_spielfeld()
+
+koordinaten = input('Gib eine Zeilen- und danach eine Spaltennummer ein:')
+koordinaten_als_liste = koordinaten.split(' ')
+x = koordinaten_als_liste[0]
+y = koordinaten_als_liste[1]
+x = int(x)
+y = int(y)
+# im Spielfeld die richtige Liste, dann richtige Position in Liste
+spielfeld[x][y]
