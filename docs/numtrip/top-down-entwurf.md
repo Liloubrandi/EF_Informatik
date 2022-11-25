@@ -1,3 +1,4 @@
 ## Top-Down-Entwurf für das Spiel Numtrip
 
-![Top-Down-Entwurf_Skizze:](images/Top-down-Entwurf_Numtrip.png)
+![Top-Down-Entwurf_Skizze:](../images/Top-down-Entwurf_Numtrip.png)
+../ ist immer ein Ordner rausgehen
