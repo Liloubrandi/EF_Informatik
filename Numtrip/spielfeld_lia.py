@@ -18,7 +18,9 @@ def mache_spielfeld():
         print(len(spielfeld[1]) * '       |')
         print('  ', end='')
         for field in line:
-            if field > 9:
+            if field == 0:
+                print(f'|       ', end='')
+            elif field > 9:
                 print(f'|   {field}  ', end='')
             elif field > 99:
                 print(f'|  {field}  ', end='')
@@ -46,11 +48,20 @@ def spaltennummer():
 spaltennummer()
 mache_spielfeld()
 
-koordinaten = input('Gib eine Zeilen- und danach eine Spaltennummer ein:')
-koordinaten_als_liste = koordinaten.split(' ')
-x = koordinaten_als_liste[0]
-y = koordinaten_als_liste[1]
-x = int(x)
-y = int(y)
-# im Spielfeld die richtige Liste, dann richtige Position in Liste
-spielfeld[x][y]
+
+def eingabe():
+    koordinaten = input('Gib eine Zeilen- und danach eine Spaltennummer ein:')
+    koordinaten_als_liste = koordinaten.split(' ')
+    return koordinaten_als_liste
+
+
+def auswerten(zeile, spalte):
+    zeile = int(zeile) - 1
+    spalte = int(spalte) - 1
+    # im Spielfeld die richtige Liste (zeile), dann richtige Position in Liste (spalte)
+    spielfeld[zeile][spalte] = 0
+
+
+x, y = eingabe()
+auswerten(x, y)
+mache_spielfeld()
