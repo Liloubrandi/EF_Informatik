@@ -45,10 +45,6 @@ def spaltennummer():
             spalte = spalte + 1
 
 
-spaltennummer()
-mache_spielfeld()
-
-
 def eingabe():
     koordinaten = input('Gib eine Zeilen- und danach eine Spaltennummer ein:')
     koordinaten_als_liste = koordinaten.split(' ')
@@ -62,6 +58,13 @@ def auswerten(zeile, spalte):
     spielfeld[zeile][spalte] = 0
 
 
-x, y = eingabe()
-auswerten(x, y)
-mache_spielfeld()
+def play():
+    spaltennummer()
+    mache_spielfeld()
+    x, y = eingabe()
+    auswerten(x, y)
+    spaltennummer()
+    mache_spielfeld()
+
+
+play()
