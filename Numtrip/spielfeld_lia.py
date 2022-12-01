@@ -59,12 +59,13 @@ def auswerten(zeile, spalte):
 
 
 def play():
-    spaltennummer()
-    mache_spielfeld()
-    x, y = eingabe()
-    auswerten(x, y)
-    spaltennummer()
-    mache_spielfeld()
+    while True:
+        spaltennummer()
+        mache_spielfeld()
+        x, y = eingabe()
+        auswerten(x, y)
+        spaltennummer()
+        mache_spielfeld()
 
 
 play()
