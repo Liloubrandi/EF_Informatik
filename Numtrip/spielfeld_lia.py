@@ -46,9 +46,9 @@ def spaltennummer():
 
 
 def eingabe():
-    koordinaten = input('Gib eine Zeilen- und danach eine Spaltennummer ein:')
-    koordinaten_als_liste = koordinaten.split(' ')
-    return koordinaten_als_liste
+    zeile = input('Gib eine Zeilennummer zwischen 1 und 6 ein:')
+    spalte = input('Gib eine Spaltennummer zwischen 1 und 6 ein:')
+    return (zeile, spalte)
 
 
 def auswerten(zeile, spalte):
@@ -56,6 +56,9 @@ def auswerten(zeile, spalte):
     spalte = int(spalte) - 1
     # im Spielfeld die richtige Liste (zeile), dann richtige Position in Liste (spalte)
     spielfeld[zeile][spalte] = 0
+
+
+# def eingabe_validieren():
 
 
 def play():
