@@ -45,20 +45,30 @@ def spaltennummer():
             spalte = spalte + 1
 
 
+def eingabe_validieren(zeile, spalte):
+    try:
+        zeile = int(zeile) - 1
+        spalte = int(spalte) - 1
+        return True  # Notwendig?
+    except:
+        print('Zeilen- und Spaltennummer müssen Zahlen sein!')
+        return False
+
+
 def eingabe():
-    zeile = input('Gib eine Zeilennummer zwischen 1 und 6 ein:')
-    spalte = input('Gib eine Spaltennummer zwischen 1 und 6 ein:')
-    return (zeile, spalte)
+    # invalide Eingaben, damit der Code unter while überhaupt durchgeführt wird.
+    zeile = " "
+    spalte = " "
+    while not eingabe_validieren(zeile, spalte):
+        zeile = input('Gib eine Zeilennummer zwischen 1 und 6 ein:')
+        spalte = input('Gib eine Spaltennummer zwischen 1 und 6 ein:')
+    # noch einmal, weil bei eingabe_validieren überprüft es nur
+    return (int(zeile), int(spalte))
 
 
 def auswerten(zeile, spalte):
-    zeile = int(zeile) - 1
-    spalte = int(spalte) - 1
     # im Spielfeld die richtige Liste (zeile), dann richtige Position in Liste (spalte)
     spielfeld[zeile][spalte] = 0
-
-
-# def eingabe_validieren():
 
 
 def play():
