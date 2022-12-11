@@ -47,7 +47,7 @@ def eingabe_validieren(zeile, spalte):
         return False
 ```
 
-Aufgetauchte Fragen: Muss hier 'return True' geschrieben werden? Wird hier zeile und spalte übergeben?
+??? Aufgetauchte Fragen: Muss hier 'return True' geschrieben werden? Wird hier zeile und spalte übergeben?
 
 ```py
 def eingabe():
@@ -60,3 +60,44 @@ def eingabe():
 ```
 
 !!! WICHTIG: Die Zahlen müssen noch einmal mit int() in Zahlen verwandelt werden, weil bei der Validierung bloss geschaut wird, ob es möglich wäre, diese in Zahlen umzuwandeln.
+
+### **Nachbarzellen kombinieren**
+
+- Ich habe versucht den Floodfill-code so umzuwandeln, dass er in mein Spiel passt.
+
+??? Leider ist ein kleines Problem aufgetreten. Da ich die Zahl bereits vorher auf 0 gesetzt hatte und es also testet, ob diese Zahl (also 0) eine 2 ist - was ja nie der Fall sein wird.
+
+```py
+def nachbarfelder_löschen(x, y, vorherige_Zahl):
+    if spielfeld[x][y] == vorherige_Zahl:  # Zahl ist ja bereits 0??
+        spielfeld[x][y] = 0
+        nachbarfelder_löschen(x, y + 1)  # rechts
+        nachbarfelder_löschen(x, y - 1)  # links
+        nachbarfelder_löschen(x + 1, y)  # unten
+        nachbarfelder_löschen(x - 1, y)  # oben
+```
+
+???Ausserdem wird nur die Zahl 2 getestet und nicht die Zahl, die vorher im Kasten stand - ich weiss nicht wie ich diese übergeben soll.
+
+```py
+nachbarfelder_löschen(zeile, spalte, 2)
+```
+
+- Die Probleme habe ich nun behoben, indem ich die Funktion auswerten ganz weggenommen habe (und somit die Zahl erst im "nachbarfelder_kombinieren" auf 0 gesetzt wird.) und die Funktion "nachbarfelder_komninieren" als Ganzes in "Auswertung()" umgewandelt habe. Zusätzlich habe ich eine Zahl vorher übergeben, welche die Zahl in diesem Feld speichert und bei der rekursiven Auswerten-funktion benutzt werden kann. Damit es keine Fehler gibt, habe ich die Rahmenbedingung in den Code eingebaut.
+
+```py
+def auswerten(x, y, vorherige_Zahl):
+    # Rahmenbedingungen
+    if x < 0 or x > 4:
+        return False
+    if y < 0 or y > 4:
+        return False
+    # Feldüberprüfen
+    # im Spielfeld die richtige Liste (zeile), dann richtige Position in Liste (spalte)
+    if spielfeld[x][y] == vorherige_Zahl:
+        spielfeld[x][y] = 0
+        auswerten(x, y + 1, vorherige_Zahl)  # rechts
+        auswerten(x, y - 1, vorherige_Zahl)  # links
+        auswerten(x + 1, y, vorherige_Zahl)  # unten
+        auswerten(x - 1, y, vorherige_Zahl)  # oben
+```
