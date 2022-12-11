@@ -1,10 +1,9 @@
 spielfeld = [
-    [2, 4, 8, 8, 32, 2],
-    [2, 2, 8, 16, 16, 8],
-    [4, 8, 2, 2, 2, 16],
-    [2, 4, 8, 16, 2, 4],
-    [8, 8, 16, 2, 2, 2],
-    [8, 4, 2, 4, 16, 32]
+    [8, 4, 16, 8, 32],
+    [2, 2, 2, 16, 16],
+    [4, 8, 2, 2, 2],
+    [8, 4, 8, 16, 4],
+    [8, 8, 16, 32, 4, ]
 ]
 
 
@@ -60,15 +59,26 @@ def eingabe():
     zeile = " "
     spalte = " "
     while not eingabe_validieren(zeile, spalte):
-        zeile = input('Gib eine Zeilennummer zwischen 1 und 6 ein:')
-        spalte = input('Gib eine Spaltennummer zwischen 1 und 6 ein:')
+        zeile = input('Gib eine Zeilennummer zwischen 1 und 5 ein:')
+        spalte = input('Gib eine Spaltennummer zwischen 1 und 5 ein:')
     # noch einmal, weil bei eingabe_validieren überprüft es nur
-    return (int(zeile), int(spalte))
+    return (int(zeile) - 1, int(spalte) - 1)
 
 
-def auswerten(zeile, spalte):
+def auswerten(x, y, vorherige_Zahl):
+    # Rahmenbedingungen
+    if x < 0 or x > 4:
+        return False
+    if y < 0 or y > 4:
+        return False
+    # Feldüberprüfen
     # im Spielfeld die richtige Liste (zeile), dann richtige Position in Liste (spalte)
-    spielfeld[zeile][spalte] = 0
+    if spielfeld[x][y] == vorherige_Zahl:
+        spielfeld[x][y] = 0
+        auswerten(x, y + 1, vorherige_Zahl)  # rechts
+        auswerten(x, y - 1, vorherige_Zahl)  # links
+        auswerten(x + 1, y, vorherige_Zahl)  # unten
+        auswerten(x - 1, y, vorherige_Zahl)  # oben
 
 
 def play():
@@ -76,7 +86,8 @@ def play():
         spaltennummer()
         mache_spielfeld()
         x, y = eingabe()
-        auswerten(x, y)
+        vorherige_zahl = spielfeld[x][y]
+        auswerten(x, y, vorherige_zahl)
         spaltennummer()
         mache_spielfeld()
 
