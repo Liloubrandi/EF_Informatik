@@ -48,10 +48,17 @@ def eingabe_validieren(zeile, spalte):
     try:
         zeile = int(zeile) - 1
         spalte = int(spalte) - 1
+        if zeile < 1 or zeile > 5:
+            print('Zeile ist nicht im Feld')
+            return False
+        elif spalte < 1 or spalte > 5:
+            print('Spalte ist nicht im Feld')
+            return False
         return True  # Notwendig?
     except:
         print('Zeilen- und Spaltennummer müssen Zahlen sein!')
         return False
+    # Kein Feld, dass keine gleichen Nachbaren hat
 
 
 def eingabe():
