@@ -54,7 +54,7 @@ def eingabe_validieren(zeile, spalte):
         elif spalte < 1 or spalte > 5:
             print('Spalte ist nicht im Feld')
             return False
-        return True  # Notwendig?
+        return True  # Notwendig? Ja, ewtas muss zurückgegeben werden
     except:
         print('Zeilen- und Spaltennummer müssen Zahlen sein!')
         return False
@@ -88,6 +88,10 @@ def auswerten(x, y, vorherige_Zahl):
         auswerten(x - 1, y, vorherige_Zahl)  # oben
 
 
+def felder_auffüllen(x, y, vorherige_zahl):
+    spielfeld[x][y] = vorherige_zahl * 2
+
+
 def play():
     while True:
         spaltennummer()
@@ -97,6 +101,7 @@ def play():
         auswerten(x, y, vorherige_zahl)
         spaltennummer()
         mache_spielfeld()
+        felder_auffüllen(x, y, vorherige_zahl)
 
 
 play()
