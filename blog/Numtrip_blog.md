@@ -83,7 +83,7 @@ def nachbarfelder_löschen(x, y, vorherige_Zahl):
 nachbarfelder_löschen(zeile, spalte, 2)
 ```
 
-- Die Probleme habe ich nun behoben, indem ich die Funktion auswerten ganz weggenommen habe (und somit die Zahl erst im "nachbarfelder_kombinieren" auf 0 gesetzt wird.) und die Funktion "nachbarfelder_komninieren" als Ganzes in "Auswertung()" umgewandelt habe. Zusätzlich habe ich eine Zahl vorher übergeben, welche die Zahl in diesem Feld speichert und bei der rekursiven Auswerten-funktion benutzt werden kann. Damit es keine Fehler gibt, habe ich die Rahmenbedingung in den Code eingebaut.
+- Die Probleme habe ich nun behoben, indem ich die Funktion auswerten ganz weggenommen habe (und somit die Zahl erst im "nachbarfelder_kombinieren" auf 0 gesetzt wird.) und die Funktion "nachbarfelder_komninieren" als Ganzes in "auswerten()" umgewandelt habe. Zusätzlich habe ich eine Zahl vorher übergeben, welche die Zahl in diesem Feld speichert und bei der rekursiven Auswerten-funktion benutzt werden kann. Damit es keine Fehler gibt, habe ich die Rahmenbedingung in den Code eingebaut.
 
 ```py
 def auswerten(x, y, vorherige_Zahl):
