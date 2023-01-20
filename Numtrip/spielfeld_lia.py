@@ -48,10 +48,10 @@ def eingabe_validieren(zeile, spalte):
     try:
         zeile = int(zeile) - 1
         spalte = int(spalte) - 1
-        if zeile < 1 or zeile > 5:
+        if zeile < 0 or zeile > 5:
             print('Zeile ist nicht im Feld')
             return False
-        elif spalte < 1 or spalte > 5:
+        elif spalte < 0 or spalte > 5:
             print('Spalte ist nicht im Feld')
             return False
         return True  # Notwendig? Ja, ewtas muss zurückgegeben werden
