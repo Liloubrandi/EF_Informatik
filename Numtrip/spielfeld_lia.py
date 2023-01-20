@@ -112,8 +112,6 @@ def play():
         vorherige_zahl = spielfeld[x][y]
         auswerten(x, y, vorherige_zahl)
         felder_auffüllen(x, y, vorherige_zahl)
-        spaltennummer()
-        mache_spielfeld()
 
 
 play()
