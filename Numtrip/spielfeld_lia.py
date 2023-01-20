@@ -90,19 +90,18 @@ def auswerten(x, y, vorherige_Zahl):
 
 def felder_auffüllen(x, y, vorherige_zahl):
     spielfeld[x][y] = vorherige_zahl * 2
-    index_zeile = 4
+    ort_in_zeile = 4
     for zeile in spielfeld[-1::-1]:
-        index_zelle = 4
+        ort_in_zelle = 4
         for zelle in zeile[-1::-1]:
             if zelle == 0:
-                zeilenindex = index_zeile
-                while not zeilenindex <= 0 and spielfeld[zeilenindex][index_zelle] == 0:
+                zeilenindex = ort_in_zeile
+                while not zeilenindex <= 0 and spielfeld[zeilenindex][ort_in_zelle] == 0:
                     zeilenindex = zeilenindex - 1
-                spielfeld[index_zeile][index_zelle] = spielfeld[zeilenindex][index_zelle]
-                spielfeld[zeilenindex][index_zelle] = 0
-            index_zelle = index_zelle - 1
-        index_zeile = index_zeile - 1
-# eventuell noch bessere Namen für index_zeile und zeilenindex
+                spielfeld[ort_in_zeile][ort_in_zelle] = spielfeld[zeilenindex][ort_in_zelle]
+                spielfeld[zeilenindex][ort_in_zelle] = 0
+            ort_in_zelle = ort_in_zelle - 1
+        ort_in_zeile = ort_in_zeile - 1
 
 
 def play():
