@@ -96,11 +96,13 @@ def felder_auffüllen(x, y, vorherige_zahl):
         for zelle in zeile[-1::-1]:
             if zelle == 0:
                 zeilenindex = index_zeile
-                while not zeilenindex < 0 and spielfeld[zeilenindex][index_zelle] == 0:
+                while not zeilenindex <= 0 and spielfeld[zeilenindex][index_zelle] == 0:
                     zeilenindex = zeilenindex - 1
                 spielfeld[index_zeile][index_zelle] = spielfeld[zeilenindex][index_zelle]
+                spielfeld[zeilenindex][index_zelle] = 0
             index_zelle = index_zelle - 1
         index_zeile = index_zeile - 1
+# eventuell noch bessere Namen für index_zeile und zeilenindex
 
 
 def play():
