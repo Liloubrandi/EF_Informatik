@@ -3,7 +3,7 @@ spielfeld = [
     [2, 2, 2, 16, 16],
     [4, 8, 2, 2, 2],
     [8, 4, 8, 16, 4],
-    [8, 8, 16, 32, 4, ]
+    [8, 8, 16, 32, 4]
 ]
 
 
@@ -90,6 +90,17 @@ def auswerten(x, y, vorherige_Zahl):
 
 def felder_auffüllen(x, y, vorherige_zahl):
     spielfeld[x][y] = vorherige_zahl * 2
+    index_zeile = 4
+    for zeile in spielfeld[-1::-1]:
+        index_zelle = 4
+        for zelle in zeile[-1::-1]:
+            if zelle == 0:
+                zeilenindex = index_zeile
+                while not zeilenindex < 0 and spielfeld[zeilenindex][index_zelle] == 0:
+                    zeilenindex = zeilenindex - 1
+                spielfeld[index_zeile][index_zelle] = spielfeld[zeilenindex][index_zelle]
+            index_zelle = index_zelle - 1
+        index_zeile = index_zeile - 1
 
 
 def play():
@@ -99,9 +110,9 @@ def play():
         x, y = eingabe()
         vorherige_zahl = spielfeld[x][y]
         auswerten(x, y, vorherige_zahl)
+        felder_auffüllen(x, y, vorherige_zahl)
         spaltennummer()
         mache_spielfeld()
-        felder_auffüllen(x, y, vorherige_zahl)
 
 
 play()
