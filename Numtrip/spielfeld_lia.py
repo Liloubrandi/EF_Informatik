@@ -114,8 +114,32 @@ def gewonnen():
                 return True
     return False
 
+
+def verloren():
+    ort_in_zeile = 0
+    for zeile in spielfeld:
+        ort_in_zelle = 0
+        for zelle in zeile:
+            if (ort_in_zelle + 1) <= 4:
+                if zelle == spielfeld[ort_in_zeile][ort_in_zelle + 1]:
+                    return False
+            if (ort_in_zelle - 1) >= 0:
+                if zelle == spielfeld[ort_in_zeile][ort_in_zelle - 1]:
+                    return False
+            if (ort_in_zeile + 1) <= 4:
+                if zelle == spielfeld[ort_in_zeile + 1][ort_in_zelle]:
+                    return False
+            if (ort_in_zeile - 1) >= 0:
+                if zelle == spielfeld[ort_in_zeile - 1][ort_in_zelle]:
+                    return False
+            ort_in_zelle = ort_in_zelle + 1
+        ort_in_zeile = ort_in_zeile + 1
+    print('Schade, du hast verloren!')
+    return True
+
+
 def play():
-    while True:
+    while not gewonnen() and not verloren():
         spaltennummer()
         mache_spielfeld()
         x, y = eingabe()
