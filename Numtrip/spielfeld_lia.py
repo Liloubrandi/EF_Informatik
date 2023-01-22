@@ -1,3 +1,5 @@
+import random
+
 spielfeld = [
     [8, 4, 16, 8, 32],
     [2, 2, 2, 16, 16],
@@ -99,7 +101,7 @@ def felder_auffüllen(x, y, vorherige_zahl):
                 while not zeilenindex <= 0 and spielfeld[zeilenindex][ort_in_zelle] == 0:
                     zeilenindex = zeilenindex - 1
                 spielfeld[ort_in_zeile][ort_in_zelle] = spielfeld[zeilenindex][ort_in_zelle]
-                spielfeld[zeilenindex][ort_in_zelle] = 0
+                spielfeld[zeilenindex][ort_in_zelle] = random.choice([2, 4, 8])
             ort_in_zelle = ort_in_zelle - 1
         ort_in_zeile = ort_in_zeile - 1
 
