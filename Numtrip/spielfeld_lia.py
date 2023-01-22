@@ -106,6 +106,14 @@ def felder_auffüllen(x, y, vorherige_zahl):
         ort_in_zeile = ort_in_zeile - 1
 
 
+def gewonnen():
+    for zeile in spielfeld:
+        for zelle in zeile:
+            if zelle == 64:
+                print('Yee, du hast gewonnen!')
+                return True
+    return False
+
 def play():
     while True:
         spaltennummer()
