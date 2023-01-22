@@ -50,26 +50,47 @@ def eingabe_validieren(zeile, spalte):
     try:
         zeile = int(zeile) - 1
         spalte = int(spalte) - 1
-        if zeile < 0 or zeile > 5:
+        if zeile < 0 or zeile > 4:
             print('Zeile ist nicht im Feld')
             return False
-        elif spalte < 0 or spalte > 5:
+        if spalte < 0 or spalte > 4:
             print('Spalte ist nicht im Feld')
             return False
         return True  # Notwendig? Ja, ewtas muss zurückgegeben werden
     except:
         print('Zeilen- und Spaltennummer müssen Zahlen sein!')
         return False
-    # Kein Feld, dass keine gleichen Nachbaren hat
+
+
+def feldauswahl_validieren(zeile, spalte):
+    zeile = int(zeile) - 1
+    spalte = int(spalte) - 1
+    if (spalte + 1) <= 4:
+        if spielfeld[zeile][spalte] == spielfeld[zeile][spalte + 1]:
+            return True
+    if (spalte - 1) >= 0:
+        if spielfeld[zeile][spalte] == spielfeld[zeile][spalte - 1]:
+            return True
+    if (zeile + 1) <= 4:
+        if spielfeld[zeile][spalte] == spielfeld[zeile + 1][spalte]:
+            return True
+    if (zeile - 1) >= 0:
+        if spielfeld[zeile][spalte] == spielfeld[zeile - 1][spalte]:
+            return True
+    print('Das ausgewählte Feld muss Nachbaren haben')
+    return False
 
 
 def eingabe():
     # invalide Eingaben, damit der Code unter while überhaupt durchgeführt wird.
-    zeile = " "
-    spalte = " "
-    while not eingabe_validieren(zeile, spalte):
+    valid = False
+    while not valid:
         zeile = input('Gib eine Zeilennummer zwischen 1 und 5 ein:')
         spalte = input('Gib eine Spaltennummer zwischen 1 und 5 ein:')
+        if eingabe_validieren(zeile, spalte):
+            valid = True
+        if feldauswahl_validieren(zeile, spalte):
+            valid = True
     # noch einmal, weil bei eingabe_validieren überprüft es nur
     return (int(zeile) - 1, int(spalte) - 1)
 
