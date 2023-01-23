@@ -5,7 +5,7 @@ spielfeld = [
     [2, 8, 2, 8, 8],
     [4, 16, 8, 8, 2],
     [8, 4, 32, 8, 8],
-    [4, 2, 2, 32, 4]
+    [4, 2, 128, 32, 4]
 ]
 
 
@@ -21,7 +21,7 @@ def mache_spielfeld():
         for field in line:
             if field == 0:
                 print(f'|       ', end='')
-            elif field > 9:
+            elif 99 > field > 9:
                 print(f'|   {field}  ', end='')
             elif field > 99:
                 print(f'|  {field}  ', end='')
