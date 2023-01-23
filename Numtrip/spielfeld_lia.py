@@ -87,9 +87,7 @@ def eingabe():
     while not valid:
         zeile = input('Gib eine Zeilennummer zwischen 1 und 5 ein:')
         spalte = input('Gib eine Spaltennummer zwischen 1 und 5 ein:')
-        if eingabe_validieren(zeile, spalte):
-            valid = True
-        if feldauswahl_validieren(zeile, spalte):
+        if eingabe_validieren(zeile, spalte) and feldauswahl_validieren(zeile, spalte):
             valid = True
     # noch einmal, weil bei eingabe_validieren überprüft es nur
     return (int(zeile) - 1, int(spalte) - 1)
