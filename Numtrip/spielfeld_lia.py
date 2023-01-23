@@ -2,10 +2,10 @@ import random
 
 spielfeld = [
     [2, 4, 16, 8, 32],
-    [2, 8, 2, 16, 8],
+    [2, 8, 2, 8, 8],
     [4, 16, 8, 4, 2],
-    [8, 4, 32, 16, 8],
-    [4, 8, 16, 32, 4]
+    [8, 4, 32, 4, 8],
+    [4, 2, 2, 32, 4]
 ]
 
 
@@ -123,12 +123,16 @@ def felder_auffüllen(x, y, vorherige_zahl):
                 spielfeld[zeilenindex][ort_in_zelle] = random.choice([2, 4, 8])
             ort_in_zelle = ort_in_zelle - 1
         ort_in_zeile = ort_in_zeile - 1
+    for zeile in spielfeld:
+        for zelle in zeile:
+            if zelle == 0:
+                zelle = random.choice([2, 4, 8])
 
 
 def gewonnen():
     for zeile in spielfeld:
         for zelle in zeile:
-            if zelle == 64:
+            if zelle == 256:
                 print('Yee, du hast gewonnen!')
                 return True
     return False
