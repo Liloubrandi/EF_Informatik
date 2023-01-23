@@ -3,8 +3,8 @@ import random
 spielfeld = [
     [2, 4, 16, 8, 32],
     [2, 8, 2, 8, 8],
-    [4, 16, 8, 4, 2],
-    [8, 4, 32, 4, 8],
+    [4, 16, 8, 8, 2],
+    [8, 4, 32, 8, 8],
     [4, 2, 2, 32, 4]
 ]
 
@@ -111,22 +111,18 @@ def auswerten(x, y, vorherige_Zahl):
 
 def felder_auffüllen(x, y, vorherige_zahl):
     spielfeld[x][y] = vorherige_zahl * 2
-    ort_in_zeile = 4
-    for zeile in spielfeld[-1::-1]:
-        ort_in_zelle = 4
-        for zelle in zeile[-1::-1]:
-            if zelle == 0:
-                zeilenindex = ort_in_zeile
-                while not zeilenindex <= 0 and spielfeld[zeilenindex][ort_in_zelle] == 0:
+    for zeile in range(4, 0, -1):
+        for zelle in range(4, 0, -1):
+            if spielfeld[zeile][zelle] == 0:
+                zeilenindex = zeile
+                while zeilenindex > 0 and spielfeld[zeilenindex][zelle] == 0:
                     zeilenindex = zeilenindex - 1
-                spielfeld[ort_in_zeile][ort_in_zelle] = spielfeld[zeilenindex][ort_in_zelle]
-                spielfeld[zeilenindex][ort_in_zelle] = random.choice([2, 4, 8])
-            ort_in_zelle = ort_in_zelle - 1
-        ort_in_zeile = ort_in_zeile - 1
-    for zeile in spielfeld:
-        for zelle in zeile:
-            if zelle == 0:
-                zelle = random.choice([2, 4, 8])
+                spielfeld[zeile][zelle] = spielfeld[zeilenindex][zelle]
+                spielfeld[zeilenindex][zelle] = 0
+    for zeile in range(5):
+        for zelle in range(5):
+            if spielfeld[zeile][zelle] == 0:
+                spielfeld[zeile][zelle] = random.choice([2, 4, 8])
 
 
 def gewonnen():
