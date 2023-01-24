@@ -187,26 +187,34 @@ def gewonnen():
 
 ```py
 def verloren():
-    ort_in_zeile = 0
-    for zeile in spielfeld:
-        ort_in_zelle = 0
-        for zelle in zeile:
-            if (ort_in_zelle + 1) <= 4:
-                if zelle == spielfeld[ort_in_zeile][ort_in_zelle + 1]:
+    for zeile in range(5):
+        for zelle in range(5):
+            if (zelle + 1) <= 4:
+                if spielfeld[zeile][zelle] == spielfeld[zeile][zelle + 1]:
                     return False
-            if (ort_in_zelle - 1) >= 0:
-                if zelle == spielfeld[ort_in_zeile][ort_in_zelle - 1]:
+            if (zelle - 1) >= 0:
+                if spielfeld[zeile][zelle] == spielfeld[zeile][zelle - 1]:
                     return False
-            if (ort_in_zeile + 1) <= 4:
-                if zelle == spielfeld[ort_in_zeile + 1][ort_in_zelle]:
+            if (zeile + 1) <= 4:
+                if spielfeld[zeile][zelle] == spielfeld[zeile + 1][zelle]:
                     return False
-            if (ort_in_zeile - 1) >= 0:
-                if zelle == spielfeld[ort_in_zeile - 1][ort_in_zelle]:
+            if (zeile - 1) >= 0:
+                if spielfeld[zeile][zelle] == spielfeld[zeile - 1][zelle]:
                     return False
-            ort_in_zelle = ort_in_zelle + 1
-        ort_in_zeile = ort_in_zeile + 1
     print('Schade, du hast verloren!')
     return True
+```
+
+### **Zufälliges Spielfeld generieren:**
+
+-Als Finish habe ich noch ein zufälliges Spielfeld generiert, damit man nicht immer mit dem gleichen Spielfeld startet. Dies habe ich gemacht, indem ich am Anfang ein leeres Spielfeld generiert habe und dies dann mit zufälligen Zahlen (2, 4, 8 oder 16) befüllt habe:
+
+```py
+def erstelle_zufälliges_board():
+    global spielfeld
+    for zeile in range(5):
+        for zelle in range(5):
+            spielfeld[zeile].append(2**random.randint(1, 4))
 ```
 
 Hier sind vor allem die aktuellen Codeblöcke von mir drin, jedoch mit Beschreibung meines Vorgehens und dem "Endresultat".
