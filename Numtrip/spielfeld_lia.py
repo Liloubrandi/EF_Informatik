@@ -1,12 +1,19 @@
 import random
 
 spielfeld = [
-    [2, 2, 16, 8, 32],
-    [16, 8, 2, 4, 8],
-    [4, 16, 8, 16, 2],
-    [8, 4, 32, 8, 16],
-    [4, 2, 16, 32, 4]
+    [],
+    [],
+    [],
+    [],
+    []
 ]
+
+
+def erstelle_zufälliges_board():
+    global spielfeld
+    for zeile in range(5):
+        for zelle in range(5):
+            spielfeld[zeile].append(2**random.randint(1, 4))
 
 
 def mache_spielfeld():
@@ -163,4 +170,5 @@ def play():
         felder_auffüllen(x, y, vorherige_zahl)
 
 
+erstelle_zufälliges_board()
 play()
