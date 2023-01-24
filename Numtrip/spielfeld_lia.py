@@ -1,10 +1,10 @@
 import random
 
 spielfeld = [
-    [2, 4, 16, 8, 32],
-    [2, 8, 2, 8, 8],
-    [4, 16, 8, 8, 2],
-    [8, 4, 32, 8, 8],
+    [2, 2, 16, 8, 32],
+    [16, 8, 2, 4, 8],
+    [4, 16, 8, 16, 2],
+    [8, 4, 32, 8, 16],
     [4, 2, 16, 32, 4]
 ]
 
@@ -135,24 +135,20 @@ def gewonnen():
 
 
 def verloren():
-    ort_in_zeile = 0
-    for zeile in spielfeld:
-        ort_in_zelle = 0
-        for zelle in zeile:
-            if (ort_in_zelle + 1) <= 4:
-                if zelle == spielfeld[ort_in_zeile][ort_in_zelle + 1]:
+    for zeile in range(5):
+        for zelle in range(5):
+            if (zelle + 1) <= 4:
+                if spielfeld[zeile][zelle] == spielfeld[zeile][zelle + 1]:
                     return False
-            if (ort_in_zelle - 1) >= 0:
-                if zelle == spielfeld[ort_in_zeile][ort_in_zelle - 1]:
+            if (zelle - 1) >= 0:
+                if spielfeld[zeile][zelle] == spielfeld[zeile][zelle - 1]:
                     return False
-            if (ort_in_zeile + 1) <= 4:
-                if zelle == spielfeld[ort_in_zeile + 1][ort_in_zelle]:
+            if (zeile + 1) <= 4:
+                if spielfeld[zeile][zelle] == spielfeld[zeile + 1][zelle]:
                     return False
-            if (ort_in_zeile - 1) >= 0:
-                if zelle == spielfeld[ort_in_zeile - 1][ort_in_zelle]:
+            if (zeile - 1) >= 0:
+                if spielfeld[zeile][zelle] == spielfeld[zeile - 1][zelle]:
                     return False
-            ort_in_zelle = ort_in_zelle + 1
-        ort_in_zeile = ort_in_zeile + 1
     print('Schade, du hast verloren!')
     return True
 
