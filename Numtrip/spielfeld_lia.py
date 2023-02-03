@@ -8,6 +8,8 @@ spielfeld = [
     []
 ]
 
+# oder: spielfeld = [[2**random.randint(1, 4) for i in range(1, size + 1)] for j in range(1, size + 1)]
+
 
 def erstelle_zufälliges_board():
     for zeile in range(5):
