@@ -34,6 +34,7 @@ def mache_spielfeld():
             else:
                 print(f'|   {field}   ', end='')
         print('|')
+
         print('  |', end='')
         print(len(spielfeld[1]) * '       |')
         print('  +', end='')
@@ -56,14 +57,13 @@ def eingabe_validieren(zeile, spalte):
     try:
         zeile = int(zeile) - 1
         spalte = int(spalte) - 1
+        if zeile < 0 or zeile > 4:
+            raise
+        if spalte < 0 or spalte > 4:
+            raise
     except:
         print('Zeilen- und Spaltennummer müssen Zahlen sein!')
-        return False
-    if zeile < 0 or zeile > 4:
-        print('Zeile ist nicht im Feld')
-        return False
-    if spalte < 0 or spalte > 4:
-        print('Spalte ist nicht im Feld')
+        print('Zahlen sollen von 1 bis 5 gehen')
         return False
     return True
 
