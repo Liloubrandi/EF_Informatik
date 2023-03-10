@@ -1,7 +1,9 @@
 ## Cheatsheet APIs
 
 **Was ist eine API?**
-Eine API ist ein Programm, welches auf dem Server läuft und auf Nachfragen des Clients warten. Nach einer Nachfrage übermittelt die API die nötigen, gefundenen Daten.
+Application Programming Interface. Eine API ist ein Programm, welches auf dem Server läuft und auf Nachfragen des Clients warten. Nach einer Nachfrage übermittelt die API die nötigen, gefundenen Daten. Die API stellt dem Entiwckler Stadndardbefehle für die Ausführung allgemeiner Operationen zur Verfügung, do dass Codes nicht von Grund auf neu geschrieben werden müssen. Eine API definiert Endpunkte.
+Bsp für GET-Endpunkt: .../api/text2emoij
+Bsp für POST-Entpunkt: .../api/uploadpic
 
 **JSON Format**
 JavaScript Object Notation. Ist eine Art die Daten im Body zu formatieren und basiert auf dem Key-Value System. -> Format: {"key": "value"}
@@ -10,7 +12,7 @@ JavaScript Object Notation. Ist eine Art die Daten im Body zu formatieren und ba
 Extensible Markup Language. Ist eine Art die Daten im Body zu formatieren und basiert auf Root- und Childnotes (übergeordnete und untergeordnete Nodes). -> Format: <rootnodes><value_tag/childnode>value</value_tag/childnode></rootnodes>
 
 **HTTP request**
-HTTP = Hypertext Transfer Protocol -> ist ein Protokoll. Das ist eine Nachfrage nach Daten von Client an den Server (Request-Response Cycle zwischen Client und Server), welcher mit der "Sprache" HTTP übertragen wird.
+HTTP = Hypertext Transfer Protocol (HTTPS: ... secure -> Nachricht wurde verschlüsselt) -> ist ein Protokoll. Das ist eine Nachfrage nach Daten von Client an den Server (Request-Response Cycle zwischen Client und Server), welcher mit der "Sprache" HTTP übertragen wird.
 
 - URL: Adresse
 - Methoden: Art des Requests
