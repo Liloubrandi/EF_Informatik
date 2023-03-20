@@ -27,7 +27,7 @@ Vielleicht hast du es schon erraten. Der `fuction`-node beinhaltet den Funktions
 
 Allgemein zum Ablauf kann man sagen, dass die API (durch die GET-Methode) auf eine Ressource zugreift, diese dann nach Angaben in der Funktion verändert und verändert zurückgibt.
 
-Die angeschlossenen `Debug`-nodes sind dabei nur da, um fehlerhafte Inputs oder Outputs frühzeitig zu erkennen und einen Fehler zu verhindern.
+Die angeschlossenen `Debug`-nodes sind dabei nur da, um auszugeben/aufzuschreiben, was genau geholt, respektive zurückgeschickt wird und wird dann angezeigt. (Quasi Funktion wie "print")
 
 **Erfahrung:**  
 Zuerst wusste ich gar nicht richtig, dass das was wir gemacht haben eine API konstruieren ist. Erst als ich begonnen habe, diesen Blog zu schreiben und dafür die Aufgabe noch einmal durchgeschaut habe, ist mir aufgefallen, was die API ist - nämlich das Programm in Node-Red, welches wir gemacht haben, um Text in Emojisprache umzuwandeln. Schwer war es für mich nicht, diese API zu konstruieren und zu verstehen, nur habe ich den Zusammenhang zwischen der Aufgabe und der API-Konstruktion zuerst nicht gemacht.
