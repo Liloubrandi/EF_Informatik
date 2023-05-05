@@ -57,10 +57,10 @@ Funktionieren alle Schichten, so kann Networking (Daten zwischen Hosts hin und h
 Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht 3: Packet (IP-Adresse) - Schicht 2: Frame (MAC-Adresse) - Schicht 1: Bits (Beim Empfangen genau rückwärts - De-Encapsulation)
 **Header:** Die vorangestellten Informationen zur Leitung durch das Internet (Protokolle und Adressen)
 **Trailer:** Informationen, welche helfen festzustellen, ob ein Fehler geschehen ist bei der Übertragung der Daten
-![OSI-Modell](../images/OSI-Modell.PNG) 
+![OSI-Modell](../images/OSI-Modell.png) 
 
 **Das TCP-IP-Modell:**
-![TCP-IP-Modell](../images/TCP-IP-Modell.PNG) 
+![TCP-IP-Modell](../images/TCP-IP-Modell.png) 
 1. **Netzzugangsschicht:** Daten können zuverlässig zwischen verbundenen Gerätem übertragen werden (Medium, Frames, Signale, Fehlererkennung, MAC-Adressen, ARP (Übersetzung von Adressen))
 2. **Internetschicht:** Lokale Netzwerke zu Internet zusammengeschlossen und Daten dadurch geleitet werden können (Pakete, IP-Adressen, Weg für Paket)
 3. **Transportschicht:** Transport zwischen zwei Endpunkten (Segmente, Ports, Segmentierung, Überwachung (Reihenfolge))
@@ -72,5 +72,5 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 - Schritte sind immer die gleichen, auch wenn Switches oder Hubs dazwischen sind
 - Fügt an die zu schickenden Daten Layer3-Header (IP-Adresse) und Layer2-Header (MAC-Adresse) an
 - Host braucht ARP request (Broadcast Nachfrage), um die MAC-Adresse eines Hosts (mit bekannter IP-Adresse) herauszufinden
-    - **ffff.ffff.ffff**: reservierte MAC-Adresse für Broadcast-Nachrichten (an alle eines Netzwerks)
+    - `ffff.ffff.ffff`: reservierte MAC-Adresse für Broadcast-Nachrichten (an alle eines Netzwerks)
 - **ARP Mappings** sind gespeichert in **ARP Caches** (Zugeordnete MAC-Adressen zu den IP-Adressen)
