@@ -68,9 +68,17 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 
 ## Netzwerkzugangsschicht
 
-**Aufgaben des Hosts (verbunden innerhalb eines Netzwerks):**
-- Schritte sind immer die gleichen, auch wenn Switches oder Hubs dazwischen sind
+**Aufgaben des Hosts (verbunden innerhalb eines Netzwerks oder zwischen Netzwerken):**
+- Lokal: Schritte sind immer die gleichen, auch wenn Switches oder Hubs dazwischen sind
+- Host kennt IP-Adresse und weiss, ob sie im gleichen oder in einem fremden Netzwerk ist (Fremd: Routers IP-Adresse als Default-Gateway-Adresse konfiguriert)
 - Fügt an die zu schickenden Daten Layer3-Header (IP-Adresse) und Layer2-Header (MAC-Adresse) an
-- Host braucht ARP request (Broadcast Nachfrage), um die MAC-Adresse eines Hosts (mit bekannter IP-Adresse) herauszufinden
+- Host braucht ARP request (Broadcast Nachfrage), um die MAC-Adresse eines Hosts (lokal) oder des Default-Gateways (Router, fremd) (mit bekannter IP-Adresse) herauszufinden
     - `ffff.ffff.ffff`: reservierte MAC-Adresse für Broadcast-Nachrichten (an alle eines Netzwerks)
 - **ARP Mappings** sind gespeichert in **ARP Caches** (Zugeordnete MAC-Adressen zu den IP-Adressen)
+
+**Aufgaben der Switch:**
+- Prinzip mit MAC Adress Tables und den drei Aufgaben ist auch bei mehrerern Switches gleich
+- Kümmert sich nur um Layer 2 (MAC-Adressen) - schaut Layer 3 (IP-Adressen) nicht an (Switch hat Adressen - braucht es nicht)
+- **MAC Adress Table:** Zuordnung von Ports mit MAC-Adressen 
+- **Switching:** Learn (MAC Adress Table ergänzen mit Quelle), Flood (Duplizieren und an alle schicken (ausser Quelle)), Forward (benutzt MAC Adress Table, um richtigen Port auszuwählen)
+- **Unicast:** Ziel ist ein anderer Host (nur wenn MAC-Adresse unbekannt geflooded), **Broadcast:** Ziel sind alle (immer geflooded) (eine Art Frame, Flood: Aktion)
