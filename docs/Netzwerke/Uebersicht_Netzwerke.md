@@ -83,7 +83,8 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 - **Switching:** Learn (MAC Adress Table ergänzen mit Quelle), Flood (Duplizieren und an alle schicken (ausser Quelle)), Forward (benutzt MAC Adress Table, um richtigen Port auszuwählen)
 - **Unicast:** Ziel ist ein anderer Host (nur wenn MAC-Adresse unbekannt geflooded), **Broadcast:** Ziel sind alle (immer geflooded) (eine Art Frame, Flood: Aktion)
 
-![Ethernet Frame](../images/Ethernet-Frame.jpg) 
+![Ethernet Frame](../images/Ethernet-Frame.jpg)   
+
 **Präambel und Start Frame Delimitter (SFD):** Abwechselnde 0 und 1 zum Darstellen der Übertragungsgeschwindigkeit
 **Ether-Type:** Art von Protokoll in den Nutzdaten (z.B. IP)
 **Nutzdaten:** die eigentliche Nachricht (Im Falle von TCP/IP-Modell ein IP-Paket)
