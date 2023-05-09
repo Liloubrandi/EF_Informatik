@@ -96,9 +96,12 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 
 - Alle Router haben eine IP- und eine MAC-Adresse für jedes Netzwerk mit dem sie verbunden sind (also auch ARP-Caches)
 - Im Gegensatz zu Hosts leiten Router Pakete, welche nicht an sie gerichtet sind weiter, während Hosts diese einfach löschen
-- **Routes** (Anleitung, wie Netzwerk erreicht werden kann) in **Routing Table** (Map von allen Netzwerken, die sie kennen)
-    - Wenn Router ein Paket erhalten, mit einer IP-Adresse, die nicht in ihre Routing Tables sind, werden sie gedroped
+- **Routes** (Anleitung, wie Netzwerk erreicht werden kann) in **Routing Table** (Map von allen Netzwerken, die sie kennen)  
+    - Wenn Router ein Paket erhalten, mit einer IP-Adresse, die nicht in ihre Routing Tables sind, werden sie gedroped  
 - Im Gegensatz zu ARP-Caches, die mit der Zeit gefüllt werden, sind die Routing Tables schon im Voraus voll
+- Router sind **hierarchisch angeordnet**: konsistentere Verbindung (als bei linear) und einfacher zu skalieren, Route Summarization ist möglich (Netzwerkmaske verkürzen, um Zeilen in Routing Table zu verkürzen (muss nicht immer geupdated werden, wenn in einem LAN neue Subnets dazukommen) und direkt an übergeordneten Router zu schicken)
+    - Im Falle, dass mehrere Routs übereinstimmen, entscheidet sich der Router für jenes, welches spezifischer ist
+    - **Default Route:** 0.0.0.0/0 (ultimate Kürzung - alles übrige, schickt es dort hin)
 
 - **Methoden, Routes zu erfassen:**
     - Directly Connected: Router wissen, mit welchen Netzwerken sie direkt verbunden sind
@@ -108,3 +111,34 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 **Aufgaben eines Routers:**
 - In Routing Tables nachschauen, wohin das Paket mit einer bestimmten IP-Adresse geschickt werden muss
 - Ergänzt ein Layer 2 Header mit der MAC-Adresse für den nächsten Hop (benutzt ARP bei unbekannter MAC-Adresse)
+
+**Routingtabellen:**
+- beinhalten Routenziel, Gateway um Netzwerk zu verlassen falls Zieladresse nicht in eigenem Netzwerk liegt, Identifikation des Netzwerkadapter (Schnittstelle) von wo aus Pakete empfangen/geschickt werden, Metrik (anhand der wird optimale Toute bestimmt)
+    - Ziel: Hostadresse, Netzwerkadresse oder Standardroute (Default Route)
+
+## Übersicht
+
+**Protokolle:**
+- Regeln und Nachrichten, die einen Internetstandard bilden (z.B. ARP)
+    - **FTP (File Transfer Protocol):** RETR request nach einem Dokument, response: dieses Dokument
+    - **SMTP (Simple Mail Transfer Protocol):** HELO request mit Mail, response: 250 mit Mail 
+    - **IMAP (Internet Message Access Protocol):** erlaubt einem Mail-Client aus einen Mail-Server zuzugreifen
+    - **HTTP (Hyper Text Transfer Protocol):** GET request für eine Webseite, response: 200 OK und Webseite
+    - **SSL (Secure Sockets Layer) / TLS (Transport Layer Security):** Sichere Verbindung zwischen Client und Webseite
+        - **HTTPS:** HTTP Kommunikation, mit SSL/TLS gesichert
+    - **DNS (Domain Name System):** Übersetzt Domain-Namen (Mail, Webseite) in IP-Adressen
+    - **DHCP (Dynamic Host Configuration Protocol):** Stellt die 4 Dinge zur Verfügung, die ein Host für Internetverbindung braucht 
+
+**4 Dinge, die ein Host für Internetverbindung braucht: (DHCP)**
+- IP-Adresse
+- Subnetzmaske
+- IP-Adresse des Default-Gateways
+- IP-Adresse des DNS
+
+**Zusammenfassung / Wichtiges:**
+- Daten bewegt sich durchs Internet anhand von 3 Tabellen:
+    - **MAC-Adress Table:** Switchport - MAC-Adresse
+    - **ARP Cache:** MAC-Adresse - IP-Adresse
+    - **Routing Table:** IP-Netzwerk - nächster Router oder Interface 
+
+![Übersicht Networkflow](../images/%C3%9Cbersicht-Netzwerke.png) 
