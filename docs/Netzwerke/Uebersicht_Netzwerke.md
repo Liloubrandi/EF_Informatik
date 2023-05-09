@@ -73,7 +73,7 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 - Host kennt IP-Adresse und weiss, ob sie im gleichen oder in einem fremden Netzwerk ist (Fremd: Routers IP-Adresse als Default-Gateway-Adresse konfiguriert)
 - Fügt an die zu schickenden Daten Layer3-Header (IP-Adresse) und Layer2-Header (MAC-Adresse) an
 - Host braucht ARP request (Broadcast Nachfrage), um die MAC-Adresse eines Hosts (lokal) oder des Default-Gateways (Router, fremd) (mit bekannter IP-Adresse) herauszufinden
-    - `ffff.ffff.ffff`: reservierte MAC-Adresse für Broadcast-Nachrichten (an alle eines Netzwerks)
+    - `ff-ff-ff-ff-ff-ff (alles 1): reservierte MAC-Adresse für Broadcast-Nachrichten (an alle eines Netzwerks)
 - **ARP Mappings** sind gespeichert in **ARP Caches** (Zugeordnete MAC-Adressen zu den IP-Adressen)
 
 **Aufgaben der Switch:**
@@ -82,3 +82,29 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 - **MAC Adress Table:** Zuordnung von Ports mit MAC-Adressen 
 - **Switching:** Learn (MAC Adress Table ergänzen mit Quelle), Flood (Duplizieren und an alle schicken (ausser Quelle)), Forward (benutzt MAC Adress Table, um richtigen Port auszuwählen)
 - **Unicast:** Ziel ist ein anderer Host (nur wenn MAC-Adresse unbekannt geflooded), **Broadcast:** Ziel sind alle (immer geflooded) (eine Art Frame, Flood: Aktion)
+
+![Ethernet Frame](../images/Ethernet-Frame.jpg) 
+**Präambel und Start Frame Delimitter (SFD):** Abwechselnde 0 und 1 zum Darstellen der Übertragungsgeschwindigkeit
+**Ether-Type:** Art von Protokoll in den Nutzdaten (z.B. IP)
+**Nutzdaten:** die eigentliche Nachricht (Im Falle von TCP/IP-Modell ein IP-Paket)
+
+**MAC-Adressen:**
+- 6 Bytes lang, hexadezimal aufgeschrieben (Trennzeichen zwischen Bytes: "-" oder ":")
+- Jeder Netzwerkadapter (NIC?) hat eine eigene eindeutige MAC-Adresse 
+
+## Routing
+
+- Alle Router haben eine IP- und eine MAC-Adresse für jedes Netzwerk mit dem sie verbunden sind (also auch ARP-Caches)
+- Im Gegensatz zu Hosts leiten Router Pakete, welche nicht an sie gerichtet sind weiter, während Hosts diese einfach löschen
+- **Routes** (Anleitung, wie Netzwerk erreicht werden kann) in **Routing Table** (Map von allen Netzwerken, die sie kennen)
+    - Wenn Router ein Paket erhalten, mit einer IP-Adresse, die nicht in ihre Routing Tables sind, werden sie gedroped
+- Im Gegensatz zu ARP-Caches, die mit der Zeit gefüllt werden, sind die Routing Tables schon im Voraus voll
+
+- **Methoden, Routes zu erfassen:**
+    - Directly Connected: Router wissen, mit welchen Netzwerken sie direkt verbunden sind
+    - Static Routes: Man kann manuell Routes zum Routing Table hinzufügen
+    - Dynamic Routes: Router kommunizieren und lernen voneinander (Dynamic Routing Protocols: z.B. RIP, OSPF, BGP ...)
+
+**Aufgaben eines Routers:**
+- In Routing Tables nachschauen, wohin das Paket mit einer bestimmten IP-Adresse geschickt werden muss
+- Ergänzt ein Layer 2 Header mit der MAC-Adresse für den nächsten Hop (benutzt ARP bei unbekannter MAC-Adresse)
