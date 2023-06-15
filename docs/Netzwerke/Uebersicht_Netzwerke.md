@@ -3,7 +3,7 @@
 ## Vom LAN zum Internet
 
 - **Host:** alle Geräte, welche Daten über ein Netzwerk erhalten oder verschicken können
-- **Client:** senden Anfragen, verlangen etwas / Servers: antworten auf Anfragen, liefern etwas (Computer mit Programmen zum antworten spezifischer Anfragen); Rolle kann sich je nach Kommunikationsverhältnis ändern
+- **Client:** senden Anfragen, verlangen etwas / **Servers**: antworten auf Anfragen, liefern etwas (Computer mit Programmen zum antworten spezifischer Anfragen); Rolle kann sich je nach Kommunikationsverhältnis ändern
 - **IP-Adresse:** Identität eines Hosts und sind hierarschisch angeordnet (Networks, Subnetworks, Device)
 - **Netzwerk:** transportiert die Daten, entsteht sobald mindestens zwei Hosts miteinander verbunden sind, es können auch Netzwerke in Netzwerken sein (Subnetworks), Im Internet sind viele Netzwerke (LANs) miteinander verbunden
 - **LAN:** Local Area Network (Schulhausnetzwerk), **WAN:** Wide Area Network (Telefonnetzwerk)
@@ -29,7 +29,7 @@ Spezielle IP-Adressen:
 - **0.0.0.0:** Platzhalter; eine beliebige, noch keine gültige oder aktuelles Netzwerk
 - **Multicast-Adressen:** gebraucht, um IP-Pakete an mehrere (aber nicht alle) Empfänger in einem LAN zu senden (Streaming, Gaming), Adressen 224.0.0.0 bis 239.255.255.255
 - **Private Netzwerkadressen:** Alle IP-Adressen weltweit eindeutig, reicht jedoch, wenn nur in isolierten privaten Netzwerk eindeutig
-    - Adressen für private Netzwerke: 10.0.0.0 bis 10.255.255.255, 172.16.0.0 bis 172.31.255.255 und 192.168.0.0 bis 172.168.255.255
+    - Adressen für private Netzwerke: 10.0.0.0 bis 10.255.255.255, 172.16.0.0 bis 172.31.255.255 und 192.168.0.0 bis 192.168.255.255
     - **Network Address Translation (NAT):** private Adresse wird durch Router in eine öffentliche umgewandelt für Eintritt ins Internet (und umgekehrt)
 
 ## Schichtenmodell
