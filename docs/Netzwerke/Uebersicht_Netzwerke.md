@@ -85,8 +85,8 @@ Senden - Encapsulation (Kapselung): Daten in Schicht 4: Segment (Port) - Schicht
 
 ![Ethernet Frame](../images/Ethernet-Frame.jpg)   
 
-**Präambel und Start Frame Delimitter (SFD):** Abwechselnde 0 und 1 zum Darstellen der Übertragungsgeschwindigkeit
-**Ether-Type:** Art von Protokoll in den Nutzdaten (z.B. IP)
+**Präambel und Start Frame Delimitter (SFD):** Abwechselnde 0 und 1 zum Darstellen der Übertragungsgeschwindigkeit  
+**Ether-Type:** Art von Protokoll in den Nutzdaten (z.B. IP)  
 **Nutzdaten:** die eigentliche Nachricht (Im Falle von TCP/IP-Modell ein IP-Paket)
 
 **MAC-Adressen:**
